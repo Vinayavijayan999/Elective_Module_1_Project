@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Add Members</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body class="container" style="margin-top: 50px; background-image: linear-gradient(rgb(186, 230, 238), rgb(178, 225, 231), rgba(146, 224, 238, 0.267)); height: 702px;">
+
+	<% if (messages.error) { %>
+	<div class="alert alert-danger" role="alert"><%- messages.error %></div>
+	<% } %>
+
+    <div class="card"> 
+    	<div class="card-header">
+			Fill to join!
+		</div>
+        <div class="card-body">
+            <form action="/members/add" method="post">
+                <div class="form-group">
+                    <label>Name:</label>
+                    <input type="text" class="form-control" name="name" value="<%= name %>" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label>Interested in:</label>
+                    <input type="text" class="form-control" name="field" value="<%= field %>" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <input type="submit" style="background-color: rgb(80, 191, 211);" class="btn btn-info" value="Add"/>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
